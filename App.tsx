@@ -9,107 +9,75 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import styled from 'styled-components/native';
+import {Provider} from 'react-redux';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import {store} from './src/store';
+import {increment, decrement} from './src/features/counter/counterSlice';
+import {useAppSelector, useAppDispatch} from './src/hooks';
 
-const Section: React.FC<{
+type ButtonProps = {
+  onPress: () => void;
   title: string;
-}> = ({children, title}) => {
-  const isDarkMode = useColorScheme() === 'dark';
+};
+
+const PressableButton = ({onPress, title}: ButtonProps) => (
+  <ButtonContainer onPress={onPress}>
+    <ButtonText>{title}</ButtonText>
+  </ButtonContainer>
+);
+
+const Counter = () => {
+  const count = useAppSelector(state => state.counter.value);
+  const dispatch = useAppDispatch();
+
+  const onIncreaseCount = () => {
+    dispatch(increment());
+  };
+
+  const onDecreaseCount = () => {
+    dispatch(decrement());
+  };
+
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
+    <Container>
+      <PressableButton title="+1" onPress={onIncreaseCount} />
+      <Text>{count}</Text>
+      <PressableButton title="-1" onPress={onDecreaseCount} />
+    </Container>
   );
 };
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <Provider store={store}>
+      <Counter />
+    </Provider>
   );
 };
 
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+const Container = styled.View`
+  flex: 1;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Text = styled.Text`
+  font-size: 18px;
+  color: blue;
+  font-weight: 500;
+`;
+
+const ButtonContainer = styled.TouchableOpacity`
+  margin-vertical: 10px;
+  padding: 12px;
+  border-radius: 10px;
+`;
+
+const ButtonText = styled.Text`
+  font-size: 18px;
+  text-align: center;
+`;
 
 export default App;
