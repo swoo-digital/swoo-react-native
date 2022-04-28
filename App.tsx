@@ -17,13 +17,16 @@ import {useAppSelector, useDispatcher} from './src/reducers';
 import styled from 'styled-components/native';
 
 const MainScreen = () => {
+  // Redux count value
   const count = useAppSelector(state => state.counter.value);
   const dispatch = useDispatcher();
 
+  // Increment function add the value from actions and store in redux
   const incrementCount = () => {
     dispatch(adding());
   };
 
+  // Decrement function subtract value from actions and store in redux
   const decrementCount = () => {
     dispatch(subtracting());
   };
