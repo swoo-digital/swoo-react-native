@@ -41,9 +41,11 @@ const Counter = () => {
 
   return (
     <Container>
-      <PressableButton title="+1" onPress={onIncreaseCount} />
-      <Text>{count}</Text>
-      <PressableButton title="-1" onPress={onDecreaseCount} />
+      <StackContainer>
+        <PressableButton title="-1" onPress={onDecreaseCount} />
+        <Text>{count}</Text>
+        <PressableButton title="+1" onPress={onIncreaseCount} />
+      </StackContainer>
     </Container>
   );
 };
@@ -58,25 +60,34 @@ const App = () => {
 
 const Container = styled.View`
   flex: 1;
-  background-color: white;
-  align-items: center;
+  background-color: #004761;
   justify-content: center;
 `;
 
+const StackContainer = styled.View`
+  height: 400px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+`;
+
 const Text = styled.Text`
-  font-size: 18px;
-  color: blue;
-  font-weight: 500;
+  font-size: 64px;
+  font-weight: 700;
+  color: #8cd6bd;
 `;
 
 const ButtonContainer = styled.TouchableOpacity`
-  margin-vertical: 10px;
-  padding: 12px;
-  border-radius: 10px;
+  width: 160px;
+  padding: 16px;
+  background-color: #ffffff;
+  border-radius: 24px;
 `;
 
 const ButtonText = styled.Text`
-  font-size: 18px;
+  color: #000000;
+  font-size: 24px;
+  font-weight: 700;
   text-align: center;
 `;
 
