@@ -9,107 +9,102 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {Provider} from 'react-redux';
+import {store} from './src/store';
+import {adding, subtracting} from './src/actions';
+import {useAppSelector, useDispatcher} from './src/reducers';
+import styled from 'styled-components/native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+const MainScreen = () => {
+  // Redux count value
+  const count = useAppSelector(state => state.counter.value);
+  const dispatch = useDispatcher();
 
-const Section: React.FC<{
-  title: string;
-}> = ({children, title}) => {
-  const isDarkMode = useColorScheme() === 'dark';
+  // Increment function add the value from actions and store in redux
+  const incrementCount = () => {
+    dispatch(adding());
+  };
+
+  // Decrement function subtract value from actions and store in redux
+  const decrementCount = () => {
+    dispatch(subtracting());
+  };
+
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
+    <Container>
+      <ContainerButtons>
+        <CounterButton onPress={decrementCount}>
+          <ButtonText>-1</ButtonText>
+        </CounterButton>
+        <CounterText>{count}</CounterText>
+        <CounterButton onPress={incrementCount}>
+          <ButtonText>+1</ButtonText>
+        </CounterButton>
+      </ContainerButtons>
+    </Container>
   );
 };
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <Provider store={store}>
+      <MainScreen />
+    </Provider>
   );
 };
 
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+const Container = styled.View`
+  flex:1
+  justify-content: center;
+  background-color: #004761;
+  overflow: hidden;
+`;
+const ContainerButtons = styled.View`
+  width: auto; /* 160px */
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: visible;
+`;
+const CounterButton = styled.TouchableOpacity`
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 160px;
+  height: auto /* 61px */;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  background-color: #ffffff;
+  overflow: visible;
+  border-radius: 24px;
+`;
 
+const ButtonText = styled.Text`
+  flex-shrink: 0;
+  width: auto;
+  height: auto;
+  white-space: pre;
+  font-weight: 700;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: 0px;
+`;
+
+const CounterText = styled.Text`
+  flex-shrink: 0;
+  width: 160px;
+  height: 71px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-breakL break-word;
+  font-weight: 700;
+  color: #8cd6bd;
+  font-size: 64px;
+  letter-spacing: 0;
+  text-align: center;
+`;
 export default App;
