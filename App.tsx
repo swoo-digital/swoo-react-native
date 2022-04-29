@@ -87,7 +87,6 @@ const ButtonText = styled.Text`
   flex-shrink: 0;
   width: auto;
   height: auto;
-  white-space: pre;
   font-weight: 700;
   color: #000000;
   font-size: 24px;
@@ -98,9 +97,6 @@ const CounterText = styled.Text`
   flex-shrink: 0;
   width: 160px;
   height: 71px;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  word-breakL break-word;
   font-weight: 700;
   color: #8cd6bd;
   font-size: 64px;
