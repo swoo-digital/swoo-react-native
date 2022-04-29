@@ -9,7 +9,6 @@
  */
 
 import React from 'react';
-import {Text, Button} from 'react-native';
 import {Provider} from 'react-redux';
 import {store} from './src/store';
 import {adding, subtracting} from './src/actions';
@@ -33,9 +32,15 @@ const MainScreen = () => {
 
   return (
     <Container>
-      <Button title="Increment" onPress={incrementCount} />
-      <Text>{count}</Text>
-      <Button title="Decrement" onPress={decrementCount} />
+      <ContainerButtons>
+        <CounterButton onPress={decrementCount}>
+          <ButtonText>-1</ButtonText>
+        </CounterButton>
+        <CounterText>{count}</CounterText>
+        <CounterButton onPress={incrementCount}>
+          <ButtonText>+1</ButtonText>
+        </CounterButton>
+      </ContainerButtons>
     </Container>
   );
 };
@@ -49,8 +54,57 @@ const App = () => {
 };
 
 const Container = styled.View`
-  flex: 1;
-  align-items: center;
+  flex:1
   justify-content: center;
+  background-color: #004761;
+  overflow: hidden;
+`;
+const ContainerButtons = styled.View`
+  width: auto; /* 160px */
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  overflow: visible;
+`;
+const CounterButton = styled.TouchableOpacity`
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 160px;
+  height: auto /* 61px */;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  background-color: #ffffff;
+  overflow: visible;
+  border-radius: 24px;
+`;
+
+const ButtonText = styled.Text`
+  flex-shrink: 0;
+  width: auto;
+  height: auto;
+  white-space: pre;
+  font-weight: 700;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: 0px;
+`;
+
+const CounterText = styled.Text`
+  flex-shrink: 0;
+  width: 160px;
+  height: 71px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-breakL break-word;
+  font-weight: 700;
+  color: #8cd6bd;
+  font-size: 64px;
+  letter-spacing: 0;
+  text-align: center;
 `;
 export default App;
