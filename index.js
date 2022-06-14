@@ -2,5 +2,5 @@
  * @format
  */
 import {registerRootComponent} from 'expo';
-import App from './App';
-registerRootComponent(App);
+import AppWrapper from './App';
+registerRootComponent(AppWrapper);
