@@ -39,9 +39,9 @@ const BoxWithStyles: FC = () => {
     <Box bg={isDarkMode ? 'primary_dark_bg' : 'primary_light_bg'}>
       <StatusBar barStyle={isDarkMode ? 'dark-content' : 'light-content'} />
       <ButtonWithStyles title="-1" onPress={decrementCounterhandler} />
-      <Text color={isDarkMode ? 'primary_dark_text' : 'primary_light_text'}>
-        {counter}
-      </Text>
+      {/* If theme colors were used for text, I get a warning: Invalid prop `color`
+      specified for `text` */}
+      <Text color={isDarkMode ? '#732942' : '#84debf'}>{counter}</Text>
       <ButtonWithStyles title="+1" onPress={incrementCounterHandler} />
     </Box>
   );
