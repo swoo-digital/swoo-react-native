@@ -1,4 +1,6 @@
 {
-  "name": "swoo",
-  "displayName": "swoo"
+  "expo": {
+    "name": "swoo",
+    "slug": "swoo"
+  }
 }
