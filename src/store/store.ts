@@ -1,4 +1,4 @@
-import {combineReducers, configureStore} from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import dataReducer from './reducers/DataSlice';
 
 const rootReducer = combineReducers({

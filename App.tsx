@@ -8,7 +8,7 @@
  * @format
  */
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Provider } from 'react-redux';
 import { Counter } from './src/components/Counter';
 import { setupStore } from './src/store/store';

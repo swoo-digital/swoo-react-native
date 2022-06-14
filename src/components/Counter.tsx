@@ -8,37 +8,37 @@
  * @format
  */
 
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { useAppDispatch, useAppSelector } from '../hooks/redux';
 import { dataSlice } from '../store/reducers/DataSlice';
 
-
 export const Counter = () => {
-  const { counter } = dataSlice.actions;
-
-  const { countRedux } = useAppSelector(state => state.dataReducer);
-
+  const { value } = useAppSelector(state => state.dataReducer);
+  const { incrementCounter, decrementCounter } = dataSlice.actions;
   const dispatch = useAppDispatch();
 
-  const handleSubtractOne = () => {
-    dispatch(counter(1));
+  const handleSubtract = () => {
+    dispatch(decrementCounter(1));
   };
 
-  // const handleAddOne = () => {
-  //   setCount(prevValue => prevValue + 1);
-  // };
+  const handleAdd = () => {
+    dispatch(incrementCounter(1));
+  };
 
   return (
     <View style={styles.container}>
       <TouchableOpacity
         activeOpacity={0.7}
         style={styles.button}
-        onPress={handleSubtractOne}>
+        onPress={handleSubtract}>
         <Text style={styles.buttonText}>-1</Text>
       </TouchableOpacity>
-      <Text style={styles.text}>{countRedux}</Text>
-      <TouchableOpacity activeOpacity={0.7} style={styles.button}>
+      <Text style={styles.text}>{value}</Text>
+      <TouchableOpacity
+        activeOpacity={0.7}
+        style={styles.button}
+        onPress={handleAdd}>
         <Text style={styles.buttonText}>+1</Text>
       </TouchableOpacity>
     </View>
