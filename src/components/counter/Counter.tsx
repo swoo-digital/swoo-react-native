@@ -10,13 +10,19 @@ const Counter = () => {
   return (
     <View style={styles.container}>
       <View style={styles.counterButton}>
-        <TouchableNativeFeedback onPress={() => dispatch(decrement())}>
+        <TouchableNativeFeedback
+          onPress={() => dispatch(decrement())}
+          data-testid="button-decrement">
           <Text style={styles.counterButtonContent}>-1</Text>
         </TouchableNativeFeedback>
       </View>
-      <Text style={styles.counterValue}>{count}</Text>
+      <Text style={styles.counterValue} data-testid="counter-value">
+        {count}
+      </Text>
       <View style={styles.counterButton}>
-        <TouchableNativeFeedback onPress={() => dispatch(increment())}>
+        <TouchableNativeFeedback
+          onPress={() => dispatch(increment())}
+          data-testid="button-increment">
           <Text style={styles.counterButtonContent}>+1</Text>
         </TouchableNativeFeedback>
       </View>
