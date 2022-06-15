@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter Component renders correctly 1`] = `ShallowWrapper {}`;
+
+exports[`Login Component renders correctly 1`] = `ShallowWrapper {}`;
+
+exports[`Root Component renders correctly 1`] = `ShallowWrapper {}`;
+
+exports[`renders correctly 1`] = `ShallowWrapper {}`;

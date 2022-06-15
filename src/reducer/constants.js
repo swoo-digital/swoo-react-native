@@ -1,0 +1,6 @@
+const ACTION_TYPES = {
+    COUNTER_INCREMENT: "counter/INCREMENT",
+    COUNTER_DECREMENT: "counter/DECREMENT",
+};
+
+export default ACTION_TYPES;
