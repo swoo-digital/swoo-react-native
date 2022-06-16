@@ -1,6 +1,5 @@
 import React from 'react';
-import CustomText from '../Text';
-import {Touchable} from '../../components';
+import {Text, Touchable} from '../../components';
 
 const Button: React.FunctionComponent<{onClick: () => void; title: string}> = ({
   onClick,
@@ -8,7 +7,7 @@ const Button: React.FunctionComponent<{onClick: () => void; title: string}> = ({
 }): JSX.Element => {
   return (
     <Touchable onPress={onClick}>
-      <CustomText>{title}</CustomText>
+      <Text>{title}</Text>
     </Touchable>
   );
 };

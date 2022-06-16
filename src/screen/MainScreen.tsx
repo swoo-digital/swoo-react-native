@@ -1,8 +1,6 @@
 import React, {FC, ReactElement} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {Box, ValueText as Text} from '../components';
-
-import Button from '../components/button';
+import {Box, ValueText as Text, Button} from '../components';
 import {decrement, increment} from '../redux/reducer';
 
 interface counterInterface {

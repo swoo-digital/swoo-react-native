@@ -4,6 +4,7 @@ import {ThemeProvider} from 'styled-components';
 
 import Screen from './src/screen/MainScreen';
 import store from './src/redux/store';
+import {theme} from './src/utils/theme';
 
 const App = () => {
   return (
@@ -16,16 +17,3 @@ const App = () => {
 };
 
 export default App;
-
-const theme = {
-  primary: {
-    colors: {
-      bg: '#004761',
-    },
-  },
-  secondary: {
-    colors: {
-      bg: '#FFFFF',
-    },
-  },
-};

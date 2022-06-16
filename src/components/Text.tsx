@@ -1,9 +1,14 @@
 import styled from 'styled-components/native';
+import {ThemeInterface} from 'styled-components';
 
-const CustomText = styled.Text({
-  fontSize: 30,
-  fontWeight: 'bold',
-  color: '#000000',
-});
+interface TextProps {
+  theme: ThemeInterface;
+}
+
+const CustomText = styled.Text<TextProps>`
+  font-size: 30px;
+  font-weight: bold;
+  color: ${props => props.theme.primaryTextColor};
+`;
 
 export default CustomText;
