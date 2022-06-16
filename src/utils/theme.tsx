@@ -6,5 +6,5 @@ export const theme: ThemeInterface = {
   primaryButtonColor: '#FFFFFF',
   secondaryButtonColor: '#004761',
   primaryTextColor: '#000000',
-  secondaryTextColor: '#8cd7be',
+  secondaryTextColor: '#8CD7BE',
 };

@@ -8,7 +8,7 @@ interface TextProps {
 const CustomText = styled.Text<TextProps>`
   font-size: 30px;
   font-weight: bold;
-  color: ${props => props.theme.primaryTextColor};
+  color: ${props => props.theme.primaryTextColor || '#000'};
 `;
 
 export default CustomText;
