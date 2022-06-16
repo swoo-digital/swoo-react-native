@@ -1,4 +1,4 @@
-package com.swoo.newarchitecture.components;
+package com.counter.newarchitecture.components;
 
 import com.facebook.jni.HybridData;
 import com.facebook.proguard.annotations.DoNotStrip;

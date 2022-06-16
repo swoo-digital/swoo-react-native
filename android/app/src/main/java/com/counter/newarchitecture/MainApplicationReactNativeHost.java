@@ -1,4 +1,4 @@
-package com.swoo.newarchitecture;
+package com.counter.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.swoo.BuildConfig;
-import com.swoo.newarchitecture.components.MainComponentsRegistry;
-import com.swoo.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.counter.BuildConfig;
+import com.counter.newarchitecture.components.MainComponentsRegistry;
+import com.counter.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 
