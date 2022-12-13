@@ -9,12 +9,32 @@
  */
 
 import React from 'react';
-import {useColorScheme} from 'react-native';
+import {Provider} from 'react-redux';
+import {ThemeProvider} from 'styled-components';
+import Pad from './src/screens/MainPad';
+import store from './src/redux/store';
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  return <></>;
+  return (
+    <ThemeProvider theme={theme}>
+      <Provider store={store}>
+        <Pad />
+      </Provider>
+    </ThemeProvider>
+  );
 };
 
 export default App;
+
+const theme = {
+  primary: {
+    colors: {
+      background: '#004761',
+    },
+  },
+  secondary: {
+    colors: {
+      background: '#FFFFF',
+    },
+  },
+};
