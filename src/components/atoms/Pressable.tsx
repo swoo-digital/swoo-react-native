@@ -1,10 +1,15 @@
 import styled from 'styled-components/native';
+import {ThemeInterface} from 'styled-components';
 
-export const Touchable = styled.TouchableOpacity({
-  backgroundColor: '#ffff',
-  borderRadius: 25,
-  paddingHorizontal: 70,
-  paddingVertical: 15,
-});
+interface ButtonProps {
+  theme: ThemeInterface;
+}
 
-export default Touchable;
+export const Pressable = styled.TouchableOpacity<ButtonProps>`
+  background-color: ${props => props.theme.primaryButtonColor};
+  border-radius: 25px;
+  padding-horizontal: 70px;
+  padding-vertical: 15px;
+`;
+
+export default Pressable;

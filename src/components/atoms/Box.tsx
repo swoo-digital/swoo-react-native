@@ -1,11 +1,16 @@
 import styled from 'styled-components/native';
+import {ThemeInterface} from 'styled-components';
 
-const Box = styled.View({
-  flex: 1,
-  backgroundColor: (props: any) => props.theme.primary.colors.bg,
-  justifyContent: 'space-evenly',
-  flexDirection: 'column',
-  alignItems: 'center',
-});
+interface BoxProps {
+  theme: ThemeInterface;
+}
+
+const Box = styled.View<BoxProps>`
+  flex: 1;
+  background-color: ${props => props.theme.primaryColor};
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+`;
 
 export default Box;

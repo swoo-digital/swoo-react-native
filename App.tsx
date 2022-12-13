@@ -13,6 +13,7 @@ import {Provider} from 'react-redux';
 import {ThemeProvider} from 'styled-components';
 import Pad from './src/screens/MainPad';
 import store from './src/redux/store';
+import {theme} from './src/theme/theme';
 
 const App = () => {
   return (
@@ -25,16 +26,3 @@ const App = () => {
 };
 
 export default App;
-
-const theme = {
-  primary: {
-    colors: {
-      background: '#004761',
-    },
-  },
-  secondary: {
-    colors: {
-      background: '#FFFFF',
-    },
-  },
-};

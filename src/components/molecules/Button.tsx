@@ -1,5 +1,5 @@
 import React from 'react';
-import {CustomText, Pressable} from '../atoms';
+import {Pressable, Text} from '../atoms';
 
 const Button: React.FunctionComponent<{onClick: () => void; title: string}> = ({
   onClick,
@@ -7,7 +7,7 @@ const Button: React.FunctionComponent<{onClick: () => void; title: string}> = ({
 }): JSX.Element => {
   return (
     <Pressable onPress={onClick}>
-      <CustomText>{title}</CustomText>
+      <Text>{title}</Text>
     </Pressable>
   );
 };
