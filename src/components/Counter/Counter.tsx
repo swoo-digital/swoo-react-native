@@ -51,7 +51,7 @@ const Counter: FC = () => {
         <SCount
           width="160px"
           height="71px"
-          color="lightGreen"
+          color="aquamarine"
           fontWeight={700}
           fontFamily={'Inter-Bold'}
           fontSize={'64px'}

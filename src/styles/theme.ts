@@ -3,6 +3,6 @@ export default {
     black: '#000000',
     white: '#ffffff',
     teal: '#004761',
-    lightGreen: '#8cd6bd',
+    aquamarine: '#8cd6bd',
   },
 }
