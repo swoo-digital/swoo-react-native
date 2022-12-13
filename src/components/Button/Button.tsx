@@ -1,47 +1,69 @@
 import React, {FC} from 'react';
 import styled from 'styled-components/native';
+import {
+  layout,
+  space,
+  border,
+  color,
+  flexbox,
+  typography,
+  position,
+} from 'styled-system';
+import {TSystemStyles} from '../../types';
 
 type TProps = {
   title: string;
   onPress: () => void;
-};
+} & TSystemStyles;
 
-const Button: FC<TProps> = ({title, onPress}) => {
+const Button: FC<TProps> = ({title, onPress, bg, color}) => {
   return (
-    <SPressable onPress={onPress}>
-      <SPressableText>{title}</SPressableText>
+    <SPressable
+      onPress={onPress}
+      bg={bg}
+      width="160px"
+      height="61px"
+      flexDirection="row"
+      justifyContent="center"
+      alignItems="center"
+      p="16px"
+      overflow="visible"
+      position="relative"
+      alignContent="center"
+      flexWrap="nowrap"
+      borderRadius="24px"
+      flexShrink={0}>
+      <SPressableText
+        color={color}
+        flexShrink={0}
+        width="auto"
+        height="auto"
+        position="relative"
+        fontWeight={700}
+        fontFamily="Inter-Bold"
+        fontSize=" 24px"
+        letterSpacing="0px">
+        {title}
+      </SPressableText>
     </SPressable>
   );
 };
 
-const SPressable = styled.Pressable`
-  box-sizing: border-box;
-  flex-shrink: 0;
-  width: 160px;
-  height: 61px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 16px 16px 16px 16px;
-  background-color: #ffffff;
-  overflow: visible;
-  position: relative;
-  align-content: center;
-  flex-wrap: nowrap;
-  border-radius: 24px;
+const SPressable = styled.Pressable<TSystemStyles>`
+  ${flexbox}
+  ${layout}
+  ${space}
+  ${border}
+  ${color}
+  ${position}
 `;
 
-const SPressableText = styled.Text`
-  flex-shrink: 0;
-  width: auto;
-  height: auto;
-  position: relative;
-  font-weight: 700;
-  font-family: 'Inter-Bold';
-  color: #000000;
-  font-size: 24px;
-  letter-spacing: 0px;
+const SPressableText = styled.Text<TSystemStyles>`
+  ${layout}
+  ${space}
+  ${position}
+  ${color}
+  ${typography}
 `;
 
 export default Button;

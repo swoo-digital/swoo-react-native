@@ -11,13 +11,17 @@
 import React from 'react';
 import {Provider} from 'react-redux';
 import {store} from './src/store';
+import {ThemeProvider} from 'styled-components';
+import theme from './src/styles/theme';
 
 import Counter from './src/components/Counter';
 
 const App = () => {
   return (
     <Provider store={store}>
-      <Counter />
+      <ThemeProvider theme={theme}>
+        <Counter />
+      </ThemeProvider>
     </Provider>
   );
 };

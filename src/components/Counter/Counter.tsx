@@ -1,5 +1,13 @@
 import React, {FC} from 'react';
 import styled from 'styled-components/native';
+import {
+  layout,
+  space,
+  color,
+  flexbox,
+  typography,
+  position,
+} from 'styled-system';
 import Button from '../Button';
 
 import {
@@ -7,10 +15,9 @@ import {
   asyncIncrementCreator,
 } from '../../store/countReducer';
 import {useAppDispatch, useAppSelector} from '../../hooks/reduxHooks';
+import {TSystemStyles} from '../../types';
 
-type TProps = {};
-
-const Counter: FC<TProps> = () => {
+const Counter: FC = () => {
   const dispatch = useAppDispatch();
   const count = useAppSelector(state => state.count.count);
 
@@ -23,49 +30,60 @@ const Counter: FC<TProps> = () => {
   };
 
   return (
-    <SContainer>
-      <SRow>
-        <Button title="+1" onPress={handleIncrement} />
-        <SCount>{count}</SCount>
-        <Button title="+1" onPress={handleDecrement} />
+    <SContainer
+      width={'100%'}
+      height={'100%'}
+      bg="teal"
+      alignItems={'center'}
+      justifyContent={'center'}
+      overflow={'hidden'}>
+      <SRow
+        width={'160px'}
+        height={'400px'}
+        overflow="visible"
+        p={'0px'}
+        alignItems={'center'}
+        justifyContent={'space-between'}
+        flexDirection={'column'}
+        alignContent={'center'}
+        flexWrap={'nowrap'}>
+        <Button title="+1" onPress={handleIncrement} bg="white" color="black" />
+        <SCount
+          width="160px"
+          height="71px"
+          color="lightGreen"
+          fontWeight={700}
+          fontFamily={'Inter-Bold'}
+          fontSize={'64px'}
+          letterSpacing={'0px'}
+          textAlign={'center'}
+          position={'relative'}
+          flexShrink={0}>
+          {count}
+        </SCount>
+        <Button title="+1" onPress={handleDecrement} bg="white" color="black" />
       </SRow>
     </SContainer>
   );
 };
 
-const SContainer = styled.View`
-  width: 100%;
-  height: 100%;
-  background-color: #004761;
-  overflow: hidden;
-  justify-content: center;
-  align-items: center;
+const SContainer = styled.View<TSystemStyles>`
+  ${layout}
+  ${color}
+  ${flexbox}
 `;
 
-const SRow = styled.View`
-  width: 160px;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  overflow: visible;
-  padding: 0px 0px 0px 0px;
-  align-content: center;
-  flex-wrap: nowrap;
+const SRow = styled.View<TSystemStyles>`
+  ${layout}
+  ${space}
+  ${flexbox}
 `;
 
-const SCount = styled.Text`
-  flex-shrink: 0;
-  width: 160px;
-  height: 71px;
-  position: relative;
-  font-weight: 700;
-  font-family: 'Inter-Bold';
-  color: #8cd6bd;
-  font-size: 64px;
-  letter-spacing: 0px;
-  text-align: center;
+const SCount = styled.Text<TSystemStyles>`
+  ${layout}
+  ${color}
+  ${typography}
+  ${position}
 `;
 
 export default Counter;
