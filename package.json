@@ -6,10 +6,12 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios --simulator='iPhone 14'",
     "start": "react-native start",
-    "test": "jest",
+    "test": "jest --watchAll --verbose",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
+    "@testing-library/jest-native": "^5.3.2",
+    "@testing-library/react-native": "^11.5.0",
     "react": "17.0.2",
     "react-native": "0.68.1"
   },
@@ -17,7 +19,7 @@
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
     "@react-native-community/eslint-config": "^2.0.0",
-    "@types/jest": "^26.0.23",
+    "@types/jest": "^29.2.4",
     "@types/react-native": "^0.67.3",
     "@types/react-test-renderer": "^17.0.1",
     "@typescript-eslint/eslint-plugin": "^5.17.0",
@@ -34,13 +36,8 @@
   },
   "jest": {
     "preset": "react-native",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-native/extend-expect"
     ]
   }
 }
