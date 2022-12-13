@@ -1,22 +1,33 @@
-import React, {FC, useState} from 'react';
+import React, {FC} from 'react';
 import styled from 'styled-components/native';
 import Button from '../Button';
+
+import {
+  asyncDecrementCreator,
+  asyncIncrementCreator,
+} from '../../store/countReducer';
+import {useAppDispatch, useAppSelector} from '../../hooks/reduxHooks';
 
 type TProps = {};
 
 const Counter: FC<TProps> = () => {
-  const [count, setCount] = useState<number>(0);
+  const dispatch = useAppDispatch();
+  const count = useAppSelector(state => state.count.count);
 
-  const handleClick = (value: number) => () => {
-    setCount(curr => curr + value);
+  const handleIncrement = () => {
+    dispatch(asyncIncrementCreator());
+  };
+
+  const handleDecrement = () => {
+    dispatch(asyncDecrementCreator());
   };
 
   return (
     <SContainer>
       <SRow>
-        <Button title="+1" onPress={handleClick(1)} />
+        <Button title="+1" onPress={handleIncrement} />
         <SCount>{count}</SCount>
-        <Button title="+1" onPress={handleClick(1)} />
+        <Button title="+1" onPress={handleDecrement} />
       </SRow>
     </SContainer>
   );

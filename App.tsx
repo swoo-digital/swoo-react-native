@@ -9,14 +9,16 @@
  */
 
 import React from 'react';
-import {SafeAreaView, StyleSheet, View} from 'react-native';
+import {Provider} from 'react-redux';
+import {store} from './src/store';
+
 import Counter from './src/components/Counter';
 
 const App = () => {
   return (
-    <View style={{flex: 1, ...StyleSheet.absoluteFillObject}}>
+    <Provider store={store}>
       <Counter />
-    </View>
+    </Provider>
   );
 };
 
