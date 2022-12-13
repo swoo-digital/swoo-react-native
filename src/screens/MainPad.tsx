@@ -20,7 +20,7 @@ const MainPad = () => {
   return (
     <Box>
       <Button title={'-1'} onClick={() => dispatch(decrement())} />
-      <Text>{count}</Text>
+      <Text testID={'countText'}>{count}</Text>
       <Button title={'+1'} onClick={() => dispatch(increment())} />
     </Box>
   );
