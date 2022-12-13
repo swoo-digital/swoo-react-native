@@ -36,5 +36,9 @@ export default function countReducer(
 
 export const incrementCreator = () => ({type: INCREMENT});
 export const decrementCreator = () => ({type: DECREMENT});
-export const asyncIncrementCreator = (): TIncrementAction => ({type: ASYNC_INCREMENT});
-export const asyncDecrementCreator = (): TDecrementAction => ({type: ASYNC_DECREMENT});
+export const asyncIncrementCreator = (): TIncrementAction => ({
+  type: ASYNC_INCREMENT,
+});
+export const asyncDecrementCreator = (): TDecrementAction => ({
+  type: ASYNC_DECREMENT,
+});
