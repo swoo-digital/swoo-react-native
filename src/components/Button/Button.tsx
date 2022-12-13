@@ -1,5 +1,4 @@
 import React, {FC} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
 import styled from 'styled-components/native';
 
 type TProps = {
@@ -30,22 +29,19 @@ const SPressable = styled.Pressable`
   position: relative;
   align-content: center;
   flex-wrap: nowrap;
-  /* gap: 10; */
   border-radius: 24px;
 `;
 
 const SPressableText = styled.Text`
   flex-shrink: 0;
-  width: auto; /* 23px */
-  height: auto; /* 29px */
-  /* white-space: pre; */
+  width: auto;
+  height: auto;
   position: relative;
   font-weight: 700;
-  /* font-family: 'Inter-Bold', 'Inter', sans-serif; */
+  font-family: 'Inter-Bold';
   color: #000000;
   font-size: 24px;
   letter-spacing: 0px;
-  /* line-height: 1.2; */
 `;
 
 export default Button;
