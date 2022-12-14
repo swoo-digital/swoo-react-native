@@ -49,6 +49,7 @@ const Counter: FC = () => {
         flexWrap={'nowrap'}>
         <Button title="+1" onPress={handleIncrement} bg="white" color="black" />
         <SCount
+          testID="counter"
           width="160px"
           height="71px"
           color="aquamarine"
@@ -61,7 +62,7 @@ const Counter: FC = () => {
           flexShrink={0}>
           {count}
         </SCount>
-        <Button title="+1" onPress={handleDecrement} bg="white" color="black" />
+        <Button title="-1" onPress={handleDecrement} bg="white" color="black" />
       </SRow>
     </SContainer>
   );

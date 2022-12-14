@@ -19,6 +19,7 @@ type TProps = {
 const Button: FC<TProps> = ({title, onPress, bg, color}) => {
   return (
     <SPressable
+      testID="button"
       onPress={onPress}
       bg={bg}
       width="160px"
