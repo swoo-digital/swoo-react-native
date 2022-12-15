@@ -4,7 +4,7 @@ import {Provider} from 'react-redux';
 import Counter from '../src/screens/Counter';
 import {store} from '../store/store';
 
-export function renderWithRedux(component) {
+export function renderWithRedux(component: React.ReactNode) {
   return render(<Provider store={store}>{component}</Provider>);
 }
 
@@ -21,10 +21,6 @@ describe('Testing Counder screen', () => {
     const {getByTestId} = renderWithRedux(<Counter />);
     const incement = getByTestId('increment');
     expect(incement).toBeDefined();
-  });
-  it('Should init value is 0', () => {
-    const state = store.getState().counter.value;
-    expect(state).toEqual(0);
   });
   it('Should render decrement component', () => {
     const {getByTestId} = renderWithRedux(<Counter />);
