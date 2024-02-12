@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components/native';
+import React from 'react'
+import styled from 'styled-components/native'
 
-const Box = styled.View``;
+const Box = styled.View``
 
-export default Box;
+export default Box
