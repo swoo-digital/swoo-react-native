@@ -1,6 +1,24 @@
 import React, {useState} from 'react';
-import {SafeAreaView, StatusBar, StyleSheet, Text, View} from 'react-native';
+import styled from 'styled-components/native';
+import {StatusBar} from 'react-native';
 import SimpleButton from './src/components/SimpleButton';
+
+const Counter = styled.Text`
+  font-size: 64px;
+  padding-vertical: 80px;
+  font-weight: bold;
+  color: #8cd6bd;
+`;
+const CounterContainer = styled.View`
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+const SafeArea = styled.SafeAreaView`
+  flex: 1;
+  background-color: #004761;
+`;
 
 const App = () => {
   // Is wrong to save this state on Redux. As it is a local state, it should be saved on the screen.
@@ -17,34 +35,15 @@ const App = () => {
   };
 
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <SafeArea>
       <StatusBar barStyle="light-content" />
-      <View style={styles.counterContainer}>
+      <CounterContainer>
         <SimpleButton label="-1" onPress={onDecrement} />
-        <Text style={styles.counter}>{currentCount}</Text>
+        <Counter>{currentCount}</Counter>
         <SimpleButton label="+1" onPress={onIncrement} />
-      </View>
-    </SafeAreaView>
+      </CounterContainer>
+    </SafeArea>
   );
 };
-
-const styles = StyleSheet.create({
-  safeArea: {
-    flex: 1,
-    backgroundColor: '#004761',
-  },
-  counterContainer: {
-    flex: 1,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  counter: {
-    fontSize: 64,
-    paddingVertical: 80,
-    fontWeight: 'bold',
-    color: '#8CD6BD',
-  },
-});
 
 export default App;

@@ -1,33 +1,31 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity} from 'react-native';
+import styled from 'styled-components/native';
 
 interface SimpleButtonProps {
   label: string;
   onPress: () => void;
 }
 
+const Container = styled.TouchableOpacity`
+  width: 160px;
+  height: 60px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+`;
+const Label = styled.Text`
+  font-size: 24px;
+  font-weight: bold;
+`;
+
 const SimpleButton = (props: SimpleButtonProps) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={props.onPress}>
-      <Text style={styles.label}>{props.label}</Text>
-    </TouchableOpacity>
+    <Container onPress={props.onPress}>
+      <Label>{props.label}</Label>
+    </Container>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    width: 160,
-    height: 60,
-    borderRadius: 24,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'white',
-  },
-  label: {
-    fontSize: 24,
-    fontWeight: 'bold',
-  },
-});
 
 export default SimpleButton;
