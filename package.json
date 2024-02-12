@@ -44,6 +44,10 @@
   },
   "jest": {
     "preset": "react-native",
+    "setupFiles": [
+      "<rootDir>/setupTest.js"
+    ],
+    "modulePathIgnorePatterns": [".history"],
     "moduleFileExtensions": [
       "ts",
       "tsx",
