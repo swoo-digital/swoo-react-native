@@ -3,6 +3,9 @@ import {SafeAreaView, StatusBar, StyleSheet, Text, View} from 'react-native';
 import SimpleButton from './src/components/SimpleButton';
 
 const App = () => {
+  // Is wrong to save this state on Redux. As it is a local state, it should be saved on the screen.
+  // Even if the feature is going to be used in other screens, it is better to use a context to share the state.
+  // Sorry I don't like Redux, I think it is a practice that is not necessary in most cases, and its harder to maintain.
   const [currentCount, setCurrentCount] = useState(0);
 
   const onIncrement = () => {
