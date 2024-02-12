@@ -12,4 +12,6 @@ export const paddingStyles = css<PaddingTypes>`
     ${({pb}) => pb && `padding-bottom: ${pb}`};
     ${({pr}) => pr && `padding-right: ${pr}`};
     ${({pl}) => pl && `padding-left: ${pl}`};
+    ${({ ph }) => ph && `padding-horizontal: ${ph}`};
+    ${({ pv }) => pv && `padding-vertical: ${pv}`};
 `;

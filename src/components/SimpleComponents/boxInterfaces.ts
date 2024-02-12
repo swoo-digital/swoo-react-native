@@ -1,4 +1,4 @@
-import {MarginTypes, PaddingTypes} from "./commonInterfaces";
+import {MarginTypes, PaddingTypes} from "../commonInterfaces";
 import {FC, SyntheticEvent} from "react";
 
 export type BoxInterface = MarginTypes &

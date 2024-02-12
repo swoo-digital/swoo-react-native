@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import styled from 'styled-components/native';
-import {MarginTypes} from './commonInterfaces';
-import {marginStyles} from './commonStyles';
+import {MarginTypes} from '../commonInterfaces';
+import {marginStyles} from '../commonStyles';
 
 type TextInterface = MarginTypes & {
     lineHeight?: string;

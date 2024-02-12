@@ -10,4 +10,6 @@ export type PaddingTypes = {
   pb?: string;
   pr?: string;
   pl?: string;
+  ph?: string;
+  pv?: string;
 };
