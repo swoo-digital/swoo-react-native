@@ -1,0 +1,48 @@
+import {MarginTypes, PaddingTypes} from "./commonInterfaces";
+import {FC, SyntheticEvent} from "react";
+
+export type BoxInterface = MarginTypes &
+    PaddingTypes & {
+    active?: boolean;
+    width?: string;
+    height?: string;
+    borderRadius?: string;
+    bg?: string;
+    flexDirection?: string;
+    flexWrap?: string;
+    justifyContent?: string;
+    alignItems?: string;
+    alignSelf?: string;
+    flex?: number;
+    opacity?: string;
+    borderBottomColor?: string;
+    borderBottomWidth?: string;
+    borderTopColor?: string;
+    borderTopWidth?: string;
+    children: React.ReactNode | FC;
+    position?: string;
+    top?: string;
+    left?: string;
+    right?: string;
+    bottom?: string;
+    zIndex?: number;
+    transform?: string;
+    borderWidth?: string;
+    borderColor?: string;
+    paddingHorizontal?: string;
+    paddingVertical?: string;
+    borderStyle?: string;
+    minHeight?: string;
+    onLayout?: (value: SyntheticEvent) => void;
+    translateY?: string;
+    translateX?: string;
+    minWid?: string;
+    maxWid?: string;
+    boxShadow?: string;
+    shadowColor?: string;
+    shadowOffset?: string;
+    shadowOpacity?: number;
+    shadowRadius?: number;
+    overflow?: string;
+    maxHt?: string;
+};
