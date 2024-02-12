@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import styled from 'styled-components/native';
 import {StatusBar} from 'react-native';
-import SimpleButton from './components/SimpleButton';
+import SimpleButton from '../components/SimpleButton';
 
-const Counter = styled.Text`
+export const Counter = styled.Text`
   font-size: 64px;
   padding-vertical: 80px;
   font-weight: bold;

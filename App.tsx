@@ -1,13 +1,7 @@
 import React from 'react';
 import {ThemeProvider} from 'styled-components/native';
-import CounterScreen from './src/CounterScreen';
-
-const theme = {
-  colors: {
-    primary: '#004761',
-    secondary: '#8CD6BD',
-  },
-};
+import CounterScreen from './src/screens/CounterScreen';
+import {theme} from './src/theme';
 
 const App = () => {
   return (
