@@ -5,6 +5,7 @@ import Home from '../pages/Home'
 import SafeArea from '../components/SafeArea'
 import { ThemeProvider } from 'styled-components/native'
 import { theme } from '../theme'
+import '../localization'
 
 const Main = () => {
   return (

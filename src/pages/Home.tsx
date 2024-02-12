@@ -3,6 +3,9 @@ import styled from 'styled-components/native'
 import Button from '../components/Button'
 import Counter from '../components/Counter'
 import ButtonText from '../components/ButtonText'
+import I18n from '../localization'
+import { useAppDispatch, useAppSelector } from '../hooks'
+import { decrementCounter, incrementCounter } from '../store/counter'
 
 const HomeContainer = styled.ScrollView.attrs(() => ({
   contentContainerStyle: {
@@ -13,14 +16,24 @@ const HomeContainer = styled.ScrollView.attrs(() => ({
 }))``
 
 const Home = () => {
+  const dispatch = useAppDispatch()
+  const { counter } = useAppSelector((state) => state.counter)
+
+  const onIncrement = () => {
+    dispatch(incrementCounter())
+  }
+  const onDecrement = () => {
+    dispatch(decrementCounter())
+  }
+
   return (
     <HomeContainer>
-      <Button>
-        <ButtonText>{'+1'}</ButtonText>
+      <Button onPress={onIncrement}>
+        <ButtonText>{I18n.t('increment')}</ButtonText>
       </Button>
-      <Counter>{'123'}</Counter>
-      <Button>
-        <ButtonText>{'-1'}</ButtonText>
+      <Counter>{counter}</Counter>
+      <Button onPress={onDecrement}>
+        <ButtonText>{I18n.t('decrement')}</ButtonText>
       </Button>
     </HomeContainer>
   )

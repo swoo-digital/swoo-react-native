@@ -3,7 +3,7 @@ import styled from 'styled-components/native'
 
 const SafeArea = styled(SafeAreaView)`
   flex: 1;
-  margin-top: ${StatusBar.currentHeight}px;
+  margin-top: ${StatusBar.currentHeight ?? 0}px;
   background: ${(props) => props.theme.colors.bg.primary};
 `
 
