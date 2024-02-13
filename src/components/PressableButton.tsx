@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import {Colors} from '../theme/colors';
+import {Fonts} from '../theme/fonts';
 
 const ButtonContainer = styled.TouchableOpacity({
   padding: 16,
@@ -11,9 +12,10 @@ const ButtonContainer = styled.TouchableOpacity({
 });
 
 const ButtonText = styled.Text({
-  fontSize: 16,
+  fontSize: 24,
   textAlign: 'center',
   color: Colors.black,
+  fontFamily: Fonts.bold,
 });
 
 // font-family: ${(props) => props.theme.fonts.body};

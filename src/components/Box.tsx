@@ -6,5 +6,5 @@ export const Box = styled.View({
   height: '100%',
   backgroundColor: Colors.mainBackgroundColor,
   alignItems: 'center',
-  justifyContent: 'space-around',
+  justifyContent: 'center',
 });
