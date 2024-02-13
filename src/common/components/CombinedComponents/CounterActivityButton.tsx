@@ -39,7 +39,7 @@ export const CounterActivityButton = ({incrementing}: ActionButtonProps) => {
                 fontFamily={fonts.interBold}
                 fontSize={3}
             >
-                {increment ? '+1' : '-1'}
+                {incrementing ? '+1' : '-1'}
             </Text>
         </Button>
     );
