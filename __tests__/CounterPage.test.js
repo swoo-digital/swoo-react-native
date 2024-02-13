@@ -22,12 +22,9 @@ test('counter increments correctly', () => {
 
     const incrementButton = getByTestId('incrementButton');
 
-    // Click the button once
     fireEvent.press(incrementButton);
 
-    // Check if the count is updated
     const countText = getByTestId('countText');
-    console.log('Count Text Value:', countText.props.children);
 
     expect(countText.props.children).toBe(1);
 });
@@ -43,12 +40,8 @@ test('counter decrement correctly', () => {
 
     const incrementButton = getByTestId('decrementButton');
 
-    // Click the button once
     fireEvent.press(incrementButton);
 
-    // Check if the count is updated
     const countText = getByTestId('countText');
-    console.log('Count Text Value:', countText.props.children);
-
     expect(countText.props.children).toBe(-1);
 });
