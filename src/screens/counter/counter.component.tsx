@@ -4,7 +4,11 @@ import IncreaseComponent from '../../components/counter/increase.component';
 import DecreaseComponent from '../../components/counter/decrease.component';
 import CounterValue from '../../components/counter/counter-value.component';
 
-const CounterComponent = () => {
+const CounterComponent: React.FC<{
+  counter: number;
+  increment: () => void;
+  decrement: () => void;
+}> = ({counter, increment, decrement}) => {
   const CenteredContainer = styled.View`
     display: flex;
     justify-content: center;
@@ -23,9 +27,9 @@ const CounterComponent = () => {
   return (
     <CenteredContainer>
       <CounterContainer>
-        <IncreaseComponent increase={() => console.log('increase')} />
-        <CounterValue>0</CounterValue>
-        <DecreaseComponent decrease={() => console.log('decrease')} />
+        <IncreaseComponent increase={increment} />
+        <CounterValue>{counter}</CounterValue>
+        <DecreaseComponent decrease={decrement} />
       </CounterContainer>
     </CenteredContainer>
   );
