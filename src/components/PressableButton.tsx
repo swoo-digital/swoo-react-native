@@ -18,15 +18,15 @@ const ButtonText = styled.Text({
   fontFamily: Fonts.bold,
 });
 
-// font-family: ${(props) => props.theme.fonts.body};
-// font-size: ${(props) => props.theme.fontSizes.button};
 interface PressableButtonProps {
   onPress: () => void;
   title: string;
 }
 
-export const PressableButton = ({onPress, title}: PressableButtonProps) => (
-  <ButtonContainer onPress={onPress}>
-    <ButtonText>{title}</ButtonText>
-  </ButtonContainer>
-);
+export const PressableButton = ({onPress, title}: PressableButtonProps) => {
+  return (
+    <ButtonContainer onPress={onPress}>
+      <ButtonText>{title}</ButtonText>
+    </ButtonContainer>
+  );
+};
