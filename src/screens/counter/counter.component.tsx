@@ -2,11 +2,14 @@ import React from 'react';
 import styled from 'styled-components/native';
 import IncreaseComponent from '../../components/counter/increase.component';
 import DecreaseComponent from '../../components/counter/decrease.component';
+import CounterValue from '../../components/counter/counter-value.component';
 
 const CounterComponent = () => {
   const CenteredContainer = styled.View`
-    display: grid;
-    place-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
   `;
 
   const CounterContainer = styled.View`
@@ -14,12 +17,7 @@ const CounterComponent = () => {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-  `;
-
-  const CounterValue = styled.Text`
-    color: #8cd6bd;
-    font-size: 64px;
-    line-height: 1.2;
+    min-height: 40%;
   `;
 
   return (
