@@ -1,18 +1,14 @@
 import React from 'react';
-import {Text, View} from 'react-native';
-import styled from 'styled-components/native';
-const Container = styled.View`
-  flex: 1;
-  background-color: red;
-  align-items: center;
-  justify-content: center;
-  align-items: center;
-`;
+import {Box} from '../../components/Box';
+import {PressableButton} from '../../components/PressableButton';
 
 export const CounterScreen = () => {
   return (
-    <Container>
-      <Text style={{color: 'red'}}>Counter Screen</Text>
-    </Container>
+    <Box>
+      <PressableButton title="-1" onPress={() => console.log('increment')} />
+
+      {/* <Counter>{counter}</Counter> */}
+      <PressableButton title="+1" onPress={() => console.log('decrement')} />
+    </Box>
   );
 };
