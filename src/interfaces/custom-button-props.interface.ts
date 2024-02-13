@@ -1,4 +1,4 @@
 export interface ICustomButtonProps {
-    title: string;
-    onPress: () => void;
+  title: string;
+  onPress: () => void;
 }

@@ -3,7 +3,7 @@ import {ICustomButtonProps} from '../../interfaces/custom-button-props.interface
 import styled from 'styled-components/native';
 
 const CustomButton: React.FC<ICustomButtonProps> = ({title, onPress}) => {
-    const Button = styled.Button`
+  const Button = styled.Button`
     background-color: white;
     border-radius: 24px;
     display: grid;
@@ -13,7 +13,7 @@ const CustomButton: React.FC<ICustomButtonProps> = ({title, onPress}) => {
     line-height: 1.2;
   `;
 
-    return <Button title={title} onPress={onPress} />;
+  return <Button title={title} onPress={onPress} />;
 };
 
 export default CustomButton;
