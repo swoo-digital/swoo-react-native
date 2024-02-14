@@ -1,7 +1,7 @@
 import React from 'react';
 import {render, fireEvent} from '@testing-library/react-native';
-import CounterScreen from '../screens/counter/counter.screen';
-import {store} from '../store/store';
+import CounterScreen from '../src/screens/counter/counter.screen';
+import {store} from '../src/store/store';
 import {Provider} from 'react-redux';
 
 describe('CounterScreen', () => {
