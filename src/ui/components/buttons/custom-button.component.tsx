@@ -1,10 +1,12 @@
 import React from 'react';
-import {ICustomButtonProps} from '../../interfaces/custom-button-props.interface';
+import {ICustomButtonProps} from '../../../interfaces/custom-button-props.interface';
 import styled from 'styled-components/native';
+import useTheme from '../../../hooks/useTheme.hook';
 
 const CustomButton: React.FC<ICustomButtonProps> = ({title, onPress}) => {
+  const theme = useTheme();
   const Button = styled.Pressable`
-    background-color: white;
+    background-color: ${theme.theme.colors.primaryButton};
     border-radius: 24px;
     display: flex;
     justify-content: center;
@@ -13,7 +15,7 @@ const CustomButton: React.FC<ICustomButtonProps> = ({title, onPress}) => {
   `;
 
   const Text = styled.Text`
-    color: black;
+    color: ${theme.theme.colors.primaryButtonText};
     font-size: 24px;
     font-weight: bold;
   `;

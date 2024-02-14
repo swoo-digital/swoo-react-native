@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import {View} from 'react-native';
+import useTheme from '../../../hooks/useTheme.hook';
 
 const CounterValue: React.FC<{children: React.ReactNode}> = ({children}) => {
+  const theme = useTheme();
   const Value = styled.Text`
-    color: #8cd6bd;
+    color: ${theme.theme.colors.primary};
     font-size: 64px;
     font-weight: bold;
   `;
