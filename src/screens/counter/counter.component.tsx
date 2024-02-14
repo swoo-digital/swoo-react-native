@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
 import CounterValue from '../../components/counter/counter-value.component';
-import CounterOperation from "../../components/counter/counter-operation.component";
+import CounterOperation from '../../components/counter/counter-operation.component';
 
 const CounterComponent: React.FC<{
   counter: number;
