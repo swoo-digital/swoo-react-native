@@ -1,6 +1,10 @@
-import React from 'react';
+import {colors} from '../utils/colors';
 import styled from 'styled-components/native';
 
-const Box = styled.View``;
-
-export default Box;
+export const Box = styled.View({
+  width: '100%',
+  height: '100%',
+  alignItems: 'center',
+  backgroundColor: colors.bg,
+  justifyContent: 'space-around',
+});
