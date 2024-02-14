@@ -12,7 +12,7 @@ interface ButtonProps {
 const Button = ({ title, onPress }: ButtonProps) => {
   const { palette } = useTheme()
 
-  const StyledButton = styled.TouchableHighlight`
+  const StyledButton = styled.TouchableOpacity`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,7 +22,7 @@ const Button = ({ title, onPress }: ButtonProps) => {
   `
 
   return (
-    <StyledButton onPress={onPress}>
+    <StyledButton onPress={onPress} activeOpacity={0.7}>
       <Typography>{title}</Typography>
     </StyledButton>
   )

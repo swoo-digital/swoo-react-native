@@ -7,14 +7,14 @@ interface TypographyProps {
   children: React.ReactNode
   fontSize?: number
   lineHeight?: number
-  style?: React.CSSProperties
+  color?: string
 }
 
 const Typography = ({
   children,
   fontSize = 24,
   lineHeight = 1.2,
-  style,
+  color,
   ...rest
 }: TypographyProps) => {
   const { palette, fonts } = useTheme()
@@ -23,8 +23,7 @@ const Typography = ({
     fontFamily: fonts.inter_bold,
     fontSize: `${fontSize}px`,
     lineHeight: `${lineHeight * fontSize}px`,
-    color: palette.buttonTextColor,
-    ...style
+    color: color || palette.buttonTextColor
   }
 
   const StyledText = styled.Text`
