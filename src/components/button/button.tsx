@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components/native'
 
 import { useTheme } from '../../helpers'
+import Typography from '../typography/typography'
 
 interface ButtonProps {
   title: string
@@ -9,9 +10,9 @@ interface ButtonProps {
 }
 
 const Button = ({ title, onPress }: ButtonProps) => {
-  const { palette, fonts } = useTheme()
+  const { palette } = useTheme()
 
-  const StyledButton = styled.Pressable`
+  const StyledButton = styled.TouchableHighlight`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,16 +21,9 @@ const Button = ({ title, onPress }: ButtonProps) => {
     padding: 16px 69px;
   `
 
-  const StyledText = styled.Text`
-    font-family: ${fonts.inter_bold};
-    font-size: 24px;
-    line-height: 120%;
-    color: ${palette.buttonTextColor};
-  `
-
   return (
     <StyledButton onPress={onPress}>
-      <StyledText>{title}</StyledText>
+      <Typography>{title}</Typography>
     </StyledButton>
   )
 }
