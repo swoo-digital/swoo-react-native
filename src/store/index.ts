@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import persistedReducer from './rootReducer'
 
-const store = configureStore({
+export const store = configureStore({
   reducer: persistedReducer
 })
 
