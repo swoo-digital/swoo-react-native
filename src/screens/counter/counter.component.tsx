@@ -1,8 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import IncreaseComponent from '../../components/counter/increase.component';
-import DecreaseComponent from '../../components/counter/decrease.component';
 import CounterValue from '../../components/counter/counter-value.component';
+import CounterOperation from "../../components/counter/counter-operation.component";
 
 const CounterComponent: React.FC<{
   counter: number;
@@ -27,9 +26,9 @@ const CounterComponent: React.FC<{
   return (
     <CenteredContainer>
       <CounterContainer>
-        <IncreaseComponent increase={increment} />
+        <CounterOperation title={'+1'} func={increment} />
         <CounterValue>{counter}</CounterValue>
-        <DecreaseComponent decrease={decrement} />
+        <CounterOperation title={'-1'} func={decrement} />
       </CounterContainer>
     </CenteredContainer>
   );
