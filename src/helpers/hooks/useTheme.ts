@@ -1,17 +1,18 @@
 import { useState, useEffect } from 'react'
 import { Appearance, useColorScheme } from 'react-native'
 
-import { darkTheme, lightTheme } from '../constants'
+import { darkTheme, lightTheme } from '../../theme/palette'
+import theme from '../../theme'
 
 export const useTheme = () => {
   const initialColorScheme = useColorScheme()
-  const [theme, setTheme] = useState(initialColorScheme)
+  const [currentTheme, setCurrentTheme] = useState(initialColorScheme)
 
-  const isDarkTheme = theme === 'dark'
+  const isDarkTheme = currentTheme === 'dark'
 
   useEffect(() => {
     const subscription = Appearance.addChangeListener(({ colorScheme }) => {
-      setTheme(colorScheme)
+      setCurrentTheme(colorScheme)
     })
 
     return () => {
@@ -19,5 +20,5 @@ export const useTheme = () => {
     }
   }, [])
 
-  return isDarkTheme ? darkTheme : lightTheme
+  return { ...theme, palette: isDarkTheme ? darkTheme : lightTheme }
 }
