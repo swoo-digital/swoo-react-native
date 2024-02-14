@@ -8,6 +8,7 @@ interface TypographyProps {
   fontSize?: number
   lineHeight?: number
   color?: string
+  accessibilityLabel?: string
 }
 
 const Typography = ({
@@ -15,6 +16,7 @@ const Typography = ({
   fontSize = 24,
   lineHeight = 1.2,
   color,
+  accessibilityLabel = '',
   ...rest
 }: TypographyProps) => {
   const { palette, fonts } = useTheme()
@@ -30,7 +32,11 @@ const Typography = ({
     ${textStyles}
   `
 
-  return <StyledText {...rest}>{children}</StyledText>
+  return (
+    <StyledText {...rest} accessibilityLabel={accessibilityLabel}>
+      {children}
+    </StyledText>
+  )
 }
 
 export default Typography

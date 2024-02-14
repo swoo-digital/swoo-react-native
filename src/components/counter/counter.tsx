@@ -42,13 +42,25 @@ const Counter = () => {
   return (
     <StyledContainer palette={palette}>
       <StyledRowContainer>
-        <Button title="-1" onPress={handleDecrease} />
+        <Button
+          title="-1"
+          onPress={handleDecrease}
+          accessibilityLabel={'decrement-button'}
+        />
         <StyledTextWrapper>
-          <Typography fontSize={64} color={palette.primary}>
+          <Typography
+            fontSize={64}
+            color={palette.primary}
+            accessibilityLabel="counter-value"
+          >
             {value}
           </Typography>
         </StyledTextWrapper>
-        <Button title="+1" onPress={handleIncrease} />
+        <Button
+          title="+1"
+          onPress={handleIncrease}
+          accessibilityLabel={'increment-button'}
+        />
       </StyledRowContainer>
     </StyledContainer>
   )

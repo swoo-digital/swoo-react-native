@@ -7,9 +7,10 @@ import Typography from '../typography/typography'
 interface ButtonProps {
   title: string
   onPress: () => void
+  accessibilityLabel?: string
 }
 
-const Button = ({ title, onPress }: ButtonProps) => {
+const Button = ({ title, onPress, accessibilityLabel = '' }: ButtonProps) => {
   const { palette } = useTheme()
 
   const StyledButton = styled.TouchableOpacity`
@@ -22,7 +23,11 @@ const Button = ({ title, onPress }: ButtonProps) => {
   `
 
   return (
-    <StyledButton onPress={onPress} activeOpacity={0.7}>
+    <StyledButton
+      onPress={onPress}
+      activeOpacity={0.7}
+      accessibilityLabel={accessibilityLabel}
+    >
       <Typography>{title}</Typography>
     </StyledButton>
   )
