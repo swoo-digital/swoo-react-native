@@ -1,6 +1,8 @@
-import React from 'react';
 import styled from 'styled-components/native';
-
-const Box = styled.View``;
+const Box = styled.View`
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+`;
 
 export default Box;
