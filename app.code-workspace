@@ -1,0 +1,32 @@
+{
+  "folders": [
+    {
+      "name": "root",
+      "path": "."
+    },
+    {
+      "name": "🍰app",
+      "path": "src/app"
+    },
+    {
+      "name": "📕screens",
+      "path": "src/screens"
+    },
+    {
+      "name": "📊widgets",
+      "path": "src/widgets"
+    },
+    {
+      "name": "🛠features",
+      "path": "src/features"
+    },
+    {
+      "name": "👥entities",
+      "path": "src/entities"
+    },
+    {
+      "name": "⚙️shared",
+      "path": "src/shared"
+    }
+  ],
+}
